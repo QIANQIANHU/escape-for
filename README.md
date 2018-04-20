@@ -24,7 +24,7 @@
   build
   ```
   ***
-  <dt>Begin installing dependencies</dt>
+  <dl><dt>Begin installing dependencies</dt></dl>
   
 * npm install react@15.5.4 react-dom@15.5.4 --save  
 
