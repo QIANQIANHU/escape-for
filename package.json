@@ -1,0 +1,11 @@
+{
+  "name": "escape-for",
+  "version": "1.0.0",
+  "description": "#### This is a WebPage to help user to generate inspiration of trips.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

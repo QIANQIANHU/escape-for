@@ -11,9 +11,22 @@
 * mkdir src
 * touch src/index.jsx and paste on the top
   ```
-    import React from 'react';
-    import ReactDOM from 'react-dom';
+  import React from 'react';
+  import ReactDOM from 'react-dom';
   ```
+* apm install react@0.16.2
+* npm init `Press Enter to accept the default values.`Note: If your project directory name includes any capital letters, some versions of npm may throw errors. If this occurs, re-name your directory in all lowercase and run $ npm init again.
+* npm Install
+* Create a file called .gitignore and add these lines:
+  ```
+  .DS_STORE
+  node_modules
+  build
+  ```
+  begin installing dependencies
+  ***
+* npm install react@15.5.4 react-dom@15.5.4 --save  
+
 
 ## Technologies Used
 
