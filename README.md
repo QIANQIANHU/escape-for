@@ -10,10 +10,10 @@
 * mkdir folder-in-this-way
 * mkdir src
 * touch src/index.jsx and paste on the top
-  `
+  ```
     import React from 'react';
     import ReactDOM from 'react-dom';
-  `
+  ```
 
 ## Technologies Used
 
