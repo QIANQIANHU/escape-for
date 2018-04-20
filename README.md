@@ -23,8 +23,9 @@
   node_modules
   build
   ```
-  begin installing dependencies
   ***
+  <dt>Begin installing dependencies</dt>
+  
 * npm install react@15.5.4 react-dom@15.5.4 --save  
 
 
