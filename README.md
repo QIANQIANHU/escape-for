@@ -7,7 +7,8 @@
 ## Description
 
 ## Setup/Installation Requirements
-* mkdir folder-in-this-way
+* apm install react@0.16.2 (make sure to install the Atom React package. This adds proper syntax highlighting to JSX files in Atom)
+* mkdir folder
 * mkdir src
 * touch src/index.jsx and paste on the top
   ```
@@ -25,8 +26,34 @@
   ```
   ***
   <dl><dt>Begin installing dependencies</dt></dl>
-  
+
 * npm install react@15.5.4 react-dom@15.5.4 --save  
+* npm install webpack@3.4.0 --save-dev
+* npm install webpack@3.4.0 -g
+<dl><dt>Webpack requires a webpack.config.js configuration file in the top-level of the project directory.</dt></dl>
+* touch webpack.config.js and paste:
+```
+const webpack = require('webpack');//The path library is a dependency of Webpack. It allows us to resolve file pathss
+const { resolve } = require('path');
+
+module.exports = {
+
+  entry: [
+    resolve(__dirname, "src") + "/index.jsx"
+  ],
+
+  output: {
+    filename: 'app.bundle.js',
+    path: resolve(__dirname, 'build'),
+  },
+
+  resolve: {
+    extensions: ['.js', '.jsx']
+  }
+
+};
+```
+*
 
 
 ## Technologies Used
