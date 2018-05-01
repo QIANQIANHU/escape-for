@@ -59,10 +59,10 @@
 
 * npm install babel-core@6.24.1 babel-loader@7.0.0 babel-preset-es2015@6.24.1 babel-preset-react@6.24.1 --save-dev
 
-  > babel-core is the primary Babel library.
-  > babel-loader is the loader tool we'll use to integrate Babel with Webpack.
-  > babel-preset-es2015 contains the information necessary for Babel to transpile our code to ES5.
-  > babel-preset-react contains the information necessary for Babel to understand our React code, in order to transpile it correctly.
+  1. babel-core is the primary Babel library.
+  2. babel-loader is the loader tool we'll use to integrate Babel with Webpack.
+  3. babel-preset-es2015 contains the information necessary for Babel to transpile our code to ES5.
+  4. babel-preset-react contains the information necessary for Babel to understand our React code, in order to transpile it correctly.
 
 * in webpack.config.js add these lines in module.exports
   ```
@@ -83,6 +83,21 @@
     }
   ```
 * webpack
+
+<dl><dt>Creating React Components</dt></dl>
+
+* mkdir src/components
+* touch src/components/App.jsx and the file template is:
+  ```
+  import React from "react";
+
+  function App(){
+    return ();
+  }
+
+  export default App;
+  ```
+
 
 ## Technologies Used
 
