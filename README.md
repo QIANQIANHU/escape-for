@@ -33,9 +33,9 @@
 
   <dl><dt>Webpack requires a webpack.config.js configuration file in the top-level of the project directory.</dt></dl>
 
-* touch webpack.config.js and add these lines:
+* touch webpack.config.js and add these lines:<https://www.learnhowtoprogram.com/react/react-fundamentals/building-an-environment>
   ```
-    const webpack = require('webpack');//The path library is a dependency of Webpack. It allows us to resolve file pathss
+    const webpack = require('webpack'); //The path library is a dependency of Webpack
     const { resolve } = require('path');
 
     module.exports = {
@@ -55,8 +55,34 @@
 
     };
   ```
-*
+    <dl><dt>use Babel to transpile our JSX into ES5 the browser understands</dt></dl>
 
+* npm install babel-core@6.24.1 babel-loader@7.0.0 babel-preset-es2015@6.24.1 babel-preset-react@6.24.1 --save-dev
+
+  > babel-core is the primary Babel library.
+  > babel-loader is the loader tool we'll use to integrate Babel with Webpack.
+  > babel-preset-es2015 contains the information necessary for Babel to transpile our code to ES5.
+  > babel-preset-react contains the information necessary for Babel to understand our React code, in order to transpile it correctly.
+
+* in webpack.config.js add these lines in module.exports
+  ```
+      module: {
+      rules: [
+        {
+          test: /\.jsx?$/,
+          loader: "babel-loader",
+          exclude: /node_modules/,
+          options: {
+            presets: [
+              "es2015",
+              "react"
+            ]
+          }
+        },
+      ],
+    }
+  ```
+* webpack
 
 ## Technologies Used
 
