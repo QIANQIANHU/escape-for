@@ -30,29 +30,31 @@
 * npm install react@15.5.4 react-dom@15.5.4 --save  
 * npm install webpack@3.4.0 --save-dev
 * npm install webpack@3.4.0 -g
-<dl><dt>Webpack requires a webpack.config.js configuration file in the top-level of the project directory.</dt></dl>
-* touch webpack.config.js and paste:
-```
-const webpack = require('webpack');//The path library is a dependency of Webpack. It allows us to resolve file pathss
-const { resolve } = require('path');
 
-module.exports = {
+  <dl><dt>Webpack requires a webpack.config.js configuration file in the top-level of the project directory.</dt></dl>
 
-  entry: [
-    resolve(__dirname, "src") + "/index.jsx"
-  ],
+* touch webpack.config.js and add these lines:
+  ```
+    const webpack = require('webpack');//The path library is a dependency of Webpack. It allows us to resolve file pathss
+    const { resolve } = require('path');
 
-  output: {
-    filename: 'app.bundle.js',
-    path: resolve(__dirname, 'build'),
-  },
+    module.exports = {
 
-  resolve: {
-    extensions: ['.js', '.jsx']
-  }
+      entry: [
+        resolve(__dirname, "src") + "/index.jsx"
+      ],
 
-};
-```
+      output: {
+        filename: 'app.bundle.js',
+        path: resolve(__dirname, 'build'),
+      },
+
+      resolve: {
+        extensions: ['.js', '.jsx']
+      }
+
+    };
+  ```
 *
 
 
