@@ -125,17 +125,18 @@
   export default App;
   ```
 <dl><dt>Rendering Parent Components in the Entry File</dt></dl>  
+
 * in src/index.jsx
+
   ```
-  import React from "react";
-  import ReactDOM from "react-dom";
-  import App from "./components/App";
+    import React from "react";
+    import ReactDOM from "react-dom";
+    import App from "./components/App";
 
-  ReactDOM.render(
-    <App/>,
-    document.getElementById('react-app-root')
-  );
-
+    ReactDOM.render(
+      <App/>,
+      document.getElementById('react-app-root')
+    );
   ```
 * webpack
 
