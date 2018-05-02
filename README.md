@@ -170,7 +170,159 @@
       issue: PropTypes.string
     };
   ```
-*
+<dl><dt>Development Server & Hot Module Replacement</dt></dl>
+
+1. Webpack Development Server
+
+* npm install webpack-dev-server@2.5.0 -g
+* npm install webpack-dev-server@2.5.0 --save-dev
+* webpack
+* webpack-dev-server
+* now can visit http://localhost:8080
+
+2. Hot Module Replacement
+
+* npm install react-hot-loader@3.0.0-beta.7 --save-dev, in our entry configurations, update webpack.config.js to enable HMR
+
+  ```
+  const { resolve } = require('path');
+  const webpack = require('webpack');
+
+  module.exports = {
+
+    entry: [
+      'react-hot-loader/patch',
+      'webpack-dev-server/client?http://localhost:8080',
+      'webpack/hot/only-dev-server',
+      resolve(__dirname, "src", "index.jsx")
+    ],
+  ```
+* add a publicPath property to our output configurations:
+
+    ```
+      output: {
+        filename: 'app.bundle.js',
+        path: resolve(__dirname, 'build'),
+        publicPath: '/'
+      },
+    ```
+* Below resolve we'll add configurations for development tools and our development server:
+  ```
+    resolve: {
+     extensions: ['.js', '.jsx']
+     },
+
+     devtool: '#source-map',
+
+     devServer: {
+       hot: true,
+       contentBase: resolve(__dirname, 'build'),
+       publicPath: '/'
+     },
+  ```
+*  add configurations to the rules section:
+  ```
+    module: {
+      rules: [
+        {
+          test: /\.jsx?$/,
+          loader: "babel-loader",
+          exclude: /node_modules/,
+          options: {
+            presets: [
+              ["es2015", {"modules": false}],
+              "react",
+            ],
+            plugins: [
+              "react-hot-loader/babel"
+            ]
+          }
+        }
+      ]
+    },
+  ```
+* add a few plugins below our module section
+  ```
+  module: {
+    rules: [
+      {
+        ...
+          plugins: [
+            "react-hot-loader/babel"
+          ]
+        }
+      }
+    ]
+    },
+
+    plugins: [
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NamedModulesPlugin(),
+    ]
+    };
+  ```
+* final vision refer to <https://www.learnhowtoprogram.com/react/react-fundamentals/building-an-environment-development-server-hot-module-replacement>
+* update our index.jsx entry point file:
+  ```
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import App from './components/App';
+    import { AppContainer } from 'react-hot-loader';
+
+    const render = (Component) => {
+      ReactDOM.render(
+        <AppContainer>
+          <Component/>
+        </AppContainer>,
+        document.getElementById('react-app-root')
+      );
+      };
+
+    render(App);
+
+    if (module.hot) {
+      module.hot.accept('./components/App', () => {
+        render(App)
+      });
+    }
+  ```
+* webpack-dev-server(no longer have to run $ webpack before launching our server, still something wrong)
+* npm install html-webpack-plugin@2.29.0 --save-dev
+*  import it into webpack.config.js and add following code to the plugins array:
+  ```
+    const webpack = require('webpack');
+    const { resolve } = require('path');
+    const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+    ...
+
+      plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(),
+        new HtmlWebpackPlugin({
+          template:'template.ejs',
+          appMountId: 'react-app-root',
+          title: 'React Help Queue',
+          filename: resolve(__dirname, "build", "index.html"),
+        }),
+      ]
+    };
+  ```
+* delete our existing index.html and replace it with the following file(template.ejs) in the top-level of our project directory:
+  ```
+    <!DOCTYPE html>
+    <head>
+      <meta charset="utf-8">
+      <title><%= htmlWebpackPlugin.options.title %></title>
+    </head>
+      <body>
+        <% if (htmlWebpackPlugin.options.appMountId) { %>
+          <div id="<%= htmlWebpackPlugin.options.appMountId%>"></div>
+        <% } %>
+      </body>
+    </html>
+  ```
+* webpack-dev-server
 
 
 ## Technologies Used
