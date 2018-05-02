@@ -87,23 +87,23 @@
 <dl><dt>creates our app.bundle.js file in the build directory</dl></dt>
 * touch index.html
   ```
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <title>My First React Project</title>
-    </head>
-    <body>
-      <div id="react-app-root">
-      </div>
-    </body>
-    <script src="build/app.bundle.js"></script>
-  </html>
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>My First React Project</title>
+      </head>
+      <body>
+        <div id="react-app-root">
+        </div>
+      </body>
+      <script src="build/app.bundle.js"></script>
+    </html>
   ```
 * at the top of index.jsx
   ```
-  import React from "react";
-  import ReactDOM from "react-dom";
-  ...
+    import React from "react";
+    import ReactDOM from "react-dom";
+    ...
   ```
 * webpack
 
