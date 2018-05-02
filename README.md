@@ -85,6 +85,7 @@
 * webpack
 
 <dl><dt>creates our app.bundle.js file in the build directory</dl></dt>
+
 * touch index.html
   ```
     <!DOCTYPE html>
@@ -155,7 +156,7 @@
     export default Header;
   ```
 * in src/components/App.jsx, add import Header from "./Header";
-* in src/components/App.jsx, in<div></div>, revise <h1>Help Queue</h1> into <Header/>
+* in src/components/App.jsx, in<div></div>, revise origin code into <Header/>
 * <https://www.learnhowtoprogram.com/react/react-fundamentals/components>
 
 <dl><dt>Declaring Prop Types after edit components</dt></dl>  
