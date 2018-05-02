@@ -472,6 +472,12 @@
 * npm run lint
 * npm run lint --fix
 
+<dl><dt>Styling React: CSS Modules</dt></dl>
+
+* npm install --save styled-jsx
+* in webpack.config.js, add `"styled-jsx/babel"`in rules array, plugins:
+* 
+
 
 ## Technologies Used
 

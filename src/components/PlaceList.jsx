@@ -22,8 +22,9 @@ var masterPlaceList = [
 function PlaceList(){
   var placeListStyles = {
     backgroundColor: '#576578',
-    fontFamily:'sans-serif',
-    paddingTop:'50px'
+    fontFamily:'monospace',
+    fontWeight: 'light',
+    padding:'20px'
   };
   return(
     <div style={placeListStyles}>

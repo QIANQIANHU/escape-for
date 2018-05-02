@@ -16,5 +16,16 @@ Place.propTypes = {
   description: PropTypes.string,
   image: PropTypes.string
 };
-
+// function Place(){
+//   <div>
+//     <style jsx>{`
+//         div {
+//           background-color: #D1CECA;
+//         }
+//       `}</style>
+//     <h3>3A - Thato & Haley</h3>
+//     <p><em>Firebase will not save record!</em></p>
+//     <hr/>
+//   </div>;
+// }
 export default Place;

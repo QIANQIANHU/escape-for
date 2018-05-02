@@ -7,6 +7,12 @@ import PlaceList from './PlaceList';
 function App(){
   return(
     <div>
+      <style jsx global>{`
+        body {
+          font-family: Helvetica;
+          background-color: #D1CECA;
+        }
+        `}</style>
       <Header/>
       <PlaceList/>
     </div>
