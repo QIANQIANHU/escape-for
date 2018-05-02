@@ -84,6 +84,29 @@
   ```
 * webpack
 
+<dl><dt>creates our app.bundle.js file in the build directory</dl></dt>
+* touch index.html
+  ```
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>My First React Project</title>
+    </head>
+    <body>
+      <div id="react-app-root">
+      </div>
+    </body>
+    <script src="build/app.bundle.js"></script>
+  </html>
+  ```
+* at the top of index.jsx
+  ```
+  import React from "react";
+  import ReactDOM from "react-dom";
+  ...
+  ```
+* webpack
+
 <dl><dt>Creating React Components</dt></dl>
 
 * mkdir src/components
@@ -92,17 +115,37 @@
   import React from "react";
 
   function App(){
-    return ();
+    return (
+      <div>
+      ...
+      </div>
+      );
   }
 
   export default App;
   ```
+<dl><dt>Rendering Parent Components in the Entry File</dt></dl>  
+* in src/index.jsx
+  ```
+  import React from "react";
+  import ReactDOM from "react-dom";
+  import App from "./components/App";
+
+  ReactDOM.render(
+    <App/>,
+    document.getElementById('react-app-root')
+  );
+
+  ```
+* webpack
+
 
 
 ## Technologies Used
 
 * React
 * Virtual DOM
+* Babel
 * JSX
 * HTML
 * CSS

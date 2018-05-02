@@ -1,13 +1,13 @@
 import React from "react"
- function App(){
+ function Place(){
    return(
      <div>
-       <h1>Help Queue</h1>
-       <h3>3a</h3>
-       <h3>Thato and Haley</h3>
+       <h1>Rome</h1>
+       <h3>Italy</h3>
+       <h3>Rececca and peppa</h3>
        <p><em>Firebase entries not saving!</em></p>
        <hr/>
      </div>
    );
  }
-export default App;
+export default Place;
