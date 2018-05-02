@@ -103,7 +103,6 @@
   ```
     import React from "react";
     import ReactDOM from "react-dom";
-    ...
   ```
 * webpack
 
@@ -140,7 +139,24 @@
   ```
 * webpack
 
+<dl><dt>Creating Nested Components</dt></dl>  
 
+* touch src/components/Header.jsx and add header details:
+
+  ```
+    import React from "react";
+
+    function Header(){
+      return (
+        <h1>Help Queue</h1>
+      );
+    }
+
+    export default Header;
+  ```
+* in src/components/App.jsx, add import Header from "./Header";
+* in src/components/App.jsx, in<div></div>, revise <h1>Help Queue</h1> into <Header/>
+* <https://www.learnhowtoprogram.com/react/react-fundamentals/components>
 
 ## Technologies Used
 

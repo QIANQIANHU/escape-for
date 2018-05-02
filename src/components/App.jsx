@@ -1,12 +1,14 @@
-import React from "react"
+import React from "react";
+import Header from "./Header";
+import PlaceList from "./PlaceList";
+import Place from "./Place";
+import Footer from "./Footer";
+
  function App(){
    return(
      <div>
-       <h1>Help Queue</h1>
-       <h3>3a</h3>
-       <h3>Thato and Haley</h3>
-       <p><em>Firebase entries not saving!</em></p>
-       <hr/>
+       <Header/>
+       <PlaceList/>
      </div>
    );
  }
