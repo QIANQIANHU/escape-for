@@ -3,7 +3,10 @@ import Place from "./Place";
 
  function PlaceList(){
    return(
-    <Place/>
+    <Place
+      name="Rome"
+      description="Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+      image="img"/>
    );
  }
 export default PlaceList;

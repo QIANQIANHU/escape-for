@@ -158,6 +158,20 @@
 * in src/components/App.jsx, in<div></div>, revise <h1>Help Queue</h1> into <Header/>
 * <https://www.learnhowtoprogram.com/react/react-fundamentals/components>
 
+<dl><dt>Declaring Prop Types after edit components</dt></dl>  
+
+* npm install prop-types@15.5.10 --save and add `import PropTypes from "prop-types";` on the top of src/components/Place.jsx
+* after funtion Place, add
+  ```
+    Ticket.propTypes = {
+      names: PropTypes.string,
+      location: PropTypes.string,
+      issue: PropTypes.string
+    };
+  ```
+*
+
+
 ## Technologies Used
 
 * React
