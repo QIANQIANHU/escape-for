@@ -156,7 +156,7 @@
     export default Header;
   ```
 * in src/components/App.jsx, add import Header from "./Header";
-* in src/components/App.jsx, in<div></div>, revise origin code into <Header/>
+* in src/components/App.jsx, revise origin code into <Header/>
 * <https://www.learnhowtoprogram.com/react/react-fundamentals/components>
 
 <dl><dt>Declaring Prop Types after edit components</dt></dl>  
@@ -220,7 +220,7 @@
        publicPath: '/'
      },
   ```
-*  add configurations to the rules section:
+* add configurations to the rules section:
   ```
     module: {
       rules: [
@@ -288,7 +288,7 @@
   ```
 * webpack-dev-server(no longer have to run $ webpack before launching our server, still something wrong)
 * npm install html-webpack-plugin@2.29.0 --save-dev
-*  import it into webpack.config.js and add following code to the plugins array:
+* import it into webpack.config.js and add following code to the plugins array:
   ```
     const webpack = require('webpack');
     const { resolve } = require('path');
