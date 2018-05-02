@@ -112,17 +112,17 @@
 * mkdir src/components
 * touch src/components/App.jsx and the file template is:
   ```
-  import React from "react";
+    import React from "react";
 
-  function App(){
-    return (
-      <div>
-      ...
-      </div>
-      );
-  }
+    function App(){
+      return (
+        <div>
+        ...
+        </div>
+        );
+    }
 
-  export default App;
+    export default App;
   ```
 <dl><dt>Rendering Parent Components in the Entry File</dt></dl>  
 
