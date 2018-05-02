@@ -337,6 +337,7 @@
 * webpack-dev-server or npm run start
 
 <dl><dt>Linting with ESLint</dt></dl>
+
 * npm install eslint -g
 * npm install eslint-plugin-react -g
 * eslint --init
