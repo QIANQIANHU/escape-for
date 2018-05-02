@@ -324,6 +324,153 @@
   ```
 * webpack-dev-server
 
+<dl><dt>npm Scripts</dt></dl>
+
+* npm run test and in package.json add scripts:
+  ```
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start":  "webpack-dev-server"
+    },
+  ```
+* npm run test
+* webpack-dev-server or npm run start
+
+<dl><dt>Linting with ESLint</dt></dl>
+* npm install eslint -g
+* npm install eslint-plugin-react -g
+* eslint --init
+* Select Answer questions about your style
+  ```
+    ? Are you using ECMAScript 6 features? Yes
+    ? Are you using ES6 modules? Yes
+    ? Where will your code run? Browser
+    ? Do you use CommonJS? No
+    ? Do you use JSX? Yes
+    ? Do you use React? Yes
+    ? What style of indentation do you use? Spaces  
+    ? What quotes do you use for strings? Single
+    ? What line endings do you use? Unix
+    ? Do you require semicolons? Yes
+    ? What format do you want your config file to be in? JSON
+  ```
+* in eslintrc.json, recommend manually changing this to 2:
+  ```
+    "indent": [
+      "error",
+      2
+    ],
+  ```
+* eslint src/** src/**/**
+* eslint src/** src/**/** --fix
+* in eslintrc.json:
+  ```
+    "extends": "eslint:recommended",
+  ```
+* add linting rules in .eslintrc.json:
+  ```
+    "rules": {
+      "react/jsx-uses-vars": 2,
+      "react/jsx-uses-react": 2,
+  ```
+  ```
+    "plugins": [
+      "react"
+    ],
+  ```
+  (how "serious" a violation of this error should be:0 = off, 1 = warn, 2 = error)
+
+* eslint src/** src/**/**
+* in src/index.jsx
+  ```
+    /*eslint-disable */
+    if (module.hot) {
+      module.hot.accept('./components/App', () => {
+        render(App);
+      });
+    }
+    /*eslint-enable */
+  ```
+* add more rules in .eslintrc.json
+  ```
+    "rules": {
+      "react/jsx-key": 2,
+      "react/jsx-uses-vars": 2,
+      "react/jsx-uses-react": 2,
+      "react/jsx-no-duplicate-props": 2,
+      "react/jsx-no-undef": 2,
+      "react/no-multi-comp": 2,
+      "react/jsx-indent-props": [
+          "error",
+          2
+        ],
+      "react/jsx-pascal-case": 2,
+      "react/prop-types": 2,
+      "react/jsx-indent": [
+          "error",
+          2
+      ],
+      "indent": [
+          "error",
+          2
+      ],
+      "linebreak-style": [
+          "error",
+          "unix"
+      ],
+      "quotes": [
+          "error",
+          "single"
+      ],
+      "semi": [
+          "error",
+          "always"
+      ]
+  }
+  ```
+* in package.json
+  ```
+    "scripts": {
+      "lint": "eslint src/** src/**/**; exit 0",
+  ```
+* npm run lint
+
+<dl><dt>ESLint Loader</dt></dl>
+
+* npm install eslint-loader --save-dev
+* add new rules in webpack.config.js
+  ```
+    rules: [
+      {
+         test: /\.jsx?$/,
+         enforce: "pre",
+         loader: "eslint-loader",
+         exclude: /node_modules/,
+         options: {
+           emitWarning: true,
+           configFile: "./.eslintrc.json"
+           }
+         },
+         {
+         test: /\.jsx?$/,
+         loader: "babel-loader",
+         exclude: /node_modules/,
+         options: {
+           presets: [
+             ["es2015", {"modules": false}],
+             "react",
+           ],
+           plugins: [
+             "react-hot-loader/babel"
+           ]
+         }
+       }
+    ]
+  ```
+* webpack
+* npm run lint
+* npm run lint --fix
+
 
 ## Technologies Used
 
