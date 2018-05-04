@@ -9,8 +9,8 @@ function App(){
     <div>
       <style jsx global>{`
         body {
-          font-family: Helvetica;
-          background-color: #D1CECA;
+          font-family: Times New Roman;
+          background-color: #576578;
         }
         `}</style>
       <Header/>
