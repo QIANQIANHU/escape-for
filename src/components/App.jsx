@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './Header';
 import PlaceList from './PlaceList';
+import { Switch, Route } from 'react-router-dom';
+import NewPlaceForm from './NewPlaceForm';
 // import Place from './Place';
 // import Footer from './Footer';
 
@@ -14,7 +16,10 @@ function App(){
         }
         `}</style>
       <Header/>
-      <PlaceList/>
+      <Switch>
+        <Route exact path='/' component={PlaceList} />
+        <Route path='/newPlace' component={NewPlaceForm} />
+      </Switch>
     </div>
   );
 }

@@ -476,7 +476,56 @@
 
 * npm install --save styled-jsx
 * in webpack.config.js, add `"styled-jsx/babel"`in rules array, plugins:
-* 
+
+<dl><dt>Implementing React-Router</dt></dl>
+
+* npm install react-router-dom@4.0.0 --save and in index.jsx:
+  ```
+    import { HashRouter } from 'react-router-dom';
+    ...
+    const render = (Component) => {
+      ReactDOM.render(
+        <AppContainer>
+          <HashRouter>
+            <Component/>
+          </HashRouter>
+        </AppContainer>,
+        document.getElementById('react-app-root')
+      );
+    };
+    ...
+  ```
+* in app.JSX
+  ```
+    import { Switch, Route } from 'react-router-dom';
+    import NewTicketForm from './NewTicketForm';
+    ...
+    <div>
+      <Header/>
+      <Switch>
+        <Route exact path='/' component={TicketList} />
+        <Route path='/newticket' component={NewTicketForm} />
+      </Switch>
+    </div>
+    ...
+  ```
+<dl><dt>Linking Between Routes</dt></dl>
+
+* in Header.jsx
+ ```
+  import React from 'react';
+  import { Link } from 'react-router-dom';
+  ...
+    function Header(){
+      return (
+        <div>
+          <h1>Help Queue</h1>
+          <Link to="/">Home</Link> | <Link to="/newticket">Create Ticket</Link>
+        </div>
+      );
+    }
+
+ ```
 
 
 ## Technologies Used
