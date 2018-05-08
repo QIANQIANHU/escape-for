@@ -31,7 +31,17 @@ module.exports = {
 
   module: {
     rules: [
-      {
+        {
+        test: /\.(png|gif|jp(e*)g|svg)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 8000,
+            name: 'images/[hash]-[name].[ext]'
+            }
+          }
+        },
+        {
          test: /\.jsx?$/,
          enforce: "pre",
          loader: "eslint-loader",

@@ -11,7 +11,7 @@ function App(){
     <div>
       <style jsx global>{`
         body {
-          font-family: Times New Roman;
+          font-family: monospace;
           background-color: #576578;
         }
         `}</style>

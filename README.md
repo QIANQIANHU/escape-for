@@ -527,6 +527,39 @@
 
  ```
 
+ <dl><dt>Configuring Webpack to Encode and Bundle Images</dt></dl>
+
+ * npm install url-loader@0.6.2 --sav-dev
+ * npm install file-loader@1.1.6 --sav-dev
+ * in webpack.config.js
+ ```
+   ...
+   module: {
+     rules: [
+      ...
+       {
+           test: /\.(png|gif|jp(e*)g|svg)$/,
+           use: {
+             loader: 'url-loader',
+             options: {
+               limit: 8000,
+               name: 'images/[hash]-[name].[ext]'
+             }
+           }
+         }
+         ...
+    ...
+ ```
+* in component/...JSX, touch src/assets/images/cutestpuppy.jpg
+  ```
+    import reallyAdorablePuppy from '../assets/images/cutestpuppy.jpg';
+    ...
+    return (
+      <div>
+        <img src={reallyAdorablePuppy}/>
+      </div>
+    );
+  ```
 
 ## Technologies Used
 

@@ -7,8 +7,6 @@ function Place(props){
     padding: '20px',
     margin: '20px',
     border: 'solid #D1CECA 10px',
-    
-
   };
   return(
     <div style={placeElement}>
