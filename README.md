@@ -527,7 +527,7 @@
 
  ```
 
- <dl><dt>Configuring Webpack to Encode and Bundle Images</dt></dl>
+<dl><dt>Configuring Webpack to Encode and Bundle Images</dt></dl>
 
  * npm install url-loader@0.6.2 --sav-dev
  * npm install file-loader@1.1.6 --sav-dev
@@ -559,6 +559,50 @@
         <img src={reallyAdorablePuppy}/>
       </div>
     );
+  ```
+
+<dl><dt>Creating an Error Route</dt></dl>
+
+* src/components/Error404.jsx
+  ```
+    import React from 'react';
+    import PropTypes from 'prop-types';
+    import { Link } from 'react-router-dom';
+
+    function Error404(props){
+      return (
+        <div>
+          <h2>The page {props.location.pathname} does not exist!</h2>
+          <h3>Would you like to return <Link to="/">home</Link> instead?</h3>
+        </div>
+      );
+    }
+
+    Error404.propTypes = {
+      location: PropTypes.object
+    };
+
+    export default Error404;
+  ```
+* in src/components/App.jsx
+  ```
+  ...
+  import Error404 from './Error404';
+
+    function App(){
+      return (
+        <div>
+          <Header/>
+          <Switch>
+            <Route exact path='/' component={TicketList} />
+            <Route path='/newticket' component={NewTicketForm} />
+            <Route component={Error404} />
+          </Switch>
+        </div>
+      );
+    }
+
+  export default App;`
   ```
 
 ## Technologies Used

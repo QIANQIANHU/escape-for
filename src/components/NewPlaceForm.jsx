@@ -6,16 +6,19 @@ function NewPlaceForm(){
       <form>
         <input
           type='text'
-          id='names'
-          placeholder='Pair Names'/>
+          id='name'
+          placeholder='Place Name'/>
+        <br/>
         <input
           type='text'
-          id='location'
-          placeholder='Location'/>
+          id='description'
+          placeholder='Description'/>
+        <br/>
         <textarea
-          id='issue'
-          placeholder='Describe your issue.'/>
-        <button type='submit'>Help!</button>
+          id='picture'
+          placeholder='Upload picture'/>
+        <br/>
+        <button type='submit'>Submit!</button>
       </form>
     </div>
   );
