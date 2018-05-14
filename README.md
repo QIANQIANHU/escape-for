@@ -618,13 +618,19 @@
         this.state = {
           formVisibleOnPage: false
         };
+        this.handleClick = this.handleClick.bind(this);
       }
 
+      handleClick(){
+        this.setState({formVisibleOnPage: true});
+        console.log('formVisibleOnPage is currently set to:' + this.state.formVisibleOnPage);
+      }
 
       render(){
         return (
           <div>
             <p>This is the NewPlaceControl component!</p>
+            <strong onClick={this.handleClick}>Click me to change my state!</strong>
           </div>
         );
       }
@@ -632,8 +638,44 @@
 
     export default NewPlaceControl;
   ```
+
 * Updating the Route, in App.jsx, import NewPlaceControl from './NewPlaceControl'; and <Route path='/newplace' component={NewPlaceControl} />
-* 
+* create a file in components "ConfirmationQuestions.jsx";
+  ```
+    import React from 'react';
+
+    function ConfirmationQuestions(){
+      return (
+        <div>
+          <p>Have you gone through all the steps on the Learn How to Program debugging lesson?</p>
+          <button>Yes</button>
+        </div>
+      );
+    }
+
+    export default ConfirmationQuestions;
+  ```
+* in NewPlaceControl add `import ConfirmationQuestions from './ConfirmationQuestions';`and change the render;
+  ```
+    render(){
+      let currentlyVisibleContent = null;
+      if (this.state.formVisibleOnPage){
+        currentlyVisibleContent = <NewPlaceForm />;
+      } else {
+        currentlyVisibleContent = <ConfirmationQuestions />;
+      }
+      return (
+        <div>
+          {currentlyVisibleContent}
+        </div>
+      );
+    }
+  ```
+
+<dl><dt>Unidirectional Data Flow in Help Queue</dt></dl>
+
+* revise NewTicketControl https://www.learnhowtoprogram.com/react/managing-state/unidirectional-data-flow
+* update ConfirmationQuestions.jsx
 
 
 ## Technologies Used
