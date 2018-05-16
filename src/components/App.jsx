@@ -8,22 +8,40 @@ import NewPlaceControl from './NewPlaceControl';
 // import Place from './Place';
 // import Footer from './Footer';
 
-function App(){
-  return(
-    <div>
-      <style jsx global>{`
-        body {
-          font-family: monospace;
-          background-color: #576578;
-        }
-        `}</style>
-      <Header/>
-      <Switch>
-        <Route exact path='/' component={PlaceList} />
-        <Route path='/newPlace' component={NewPlaceControl} />
-        <Route component={Error404} />
-      </Switch>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterPlaceList: []
+    };
+    this.handleAddingNewPlaceToList = this.handleAddingNewPlaceToList.bind(this);
+  }
+
+  handleAddingNewPlaceToList(newPlace){
+    var newMasterPlaceList = this.state.masterPlaceList.slice();
+    newMasterPlaceList.push(newPlace);
+    this.setState({masterPlaceList: newMasterPlaceList});
+  }
+
+  render(){
+    return(
+      <div>
+        <style jsx global>{`
+          body {
+            font-family: monospace;
+            background-color: #576578;
+          }
+          `}</style>
+        <Header/>
+        <Switch>
+          <Route exact path='/' render={()=><PlaceList placeList={this.state.masterPlaceList} />} />
+          <Route path='/newPlace' render={()=><NewPlaceControl onNewPlaceCreation={this.handleAddingNewPlaceToList} />} />
+          <Route component={Error404} />
+        </Switch>
+      </div>
+    );
+  }
 }
+
 export default App;

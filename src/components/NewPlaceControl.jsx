@@ -1,6 +1,7 @@
 import React from 'react';
 import ConfirmationQuestions from './ConfirmationQuestions';
 import NewPlaceForm from './NewPlaceForm';
+import PropTypes from 'prop-types';
 
 class NewPlaceControl extends React.Component {
 
@@ -19,7 +20,7 @@ class NewPlaceControl extends React.Component {
   render(){
     let currentlyVisibleContent = null;
     if (this.state.formVisibleOnPage){
-      currentlyVisibleContent = <NewPlaceForm />;
+      currentlyVisibleContent = <NewPlaceForm onNewPlaceCreation={this.props.onNewPlaceCreation}/>;
     } else {
       currentlyVisibleContent = <ConfirmationQuestions onTroubleshootingConfirmation={this.handleTroubleshootingConfirmation}/>;
     }
@@ -30,5 +31,9 @@ class NewPlaceControl extends React.Component {
     );
   }
 }
+
+NewPlaceControl.propTypes = {
+  onNewPlaceCreation: PropTypes.func
+};
 
 export default NewPlaceControl;

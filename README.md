@@ -676,7 +676,8 @@
 
 * revise NewTicketControl https://www.learnhowtoprogram.com/react/managing-state/unidirectional-data-flow
 * update ConfirmationQuestions.jsx
-
+* gathering data from forms
+https://www.learnhowtoprogram.com/react/managing-state/forms-and-refs
 
 ## Technologies Used
 
