@@ -678,6 +678,12 @@
 * update ConfirmationQuestions.jsx
 * gathering data from forms
 https://www.learnhowtoprogram.com/react/managing-state/forms-and-refs
+* Lifting State https://www.learnhowtoprogram.com/react/managing-state/lifting-state-part-2
+
+<dl><dt>Add a library called UUID to assign unique ID values</dt></dl>
+
+* npm install uuid@3.2.1
+* in NewTicketForm.jsx `import { v4 } from 'uuid';`
 
 ## Technologies Used
 

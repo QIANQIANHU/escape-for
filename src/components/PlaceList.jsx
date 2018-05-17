@@ -35,7 +35,7 @@ function PlaceList(props){
       {props.placeList.map((place,index) =>
         <Place name={place.name}
           description={place.description}
-          picture={place.picture}
+          image={place.image}
           key={index}/>
       )}
     </div>

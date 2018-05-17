@@ -11,7 +11,7 @@ function Place(props){
   return(
     <div style={placeElement}>
       <h1>{props.name} - {props.description}</h1>
-      <p>{props.image}</p>
+      <img src={props.image}/>
     </div>
   );
 }
