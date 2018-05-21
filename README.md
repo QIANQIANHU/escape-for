@@ -684,6 +684,7 @@ https://www.learnhowtoprogram.com/react/managing-state/forms-and-refs
 
 * npm install uuid@3.2.1
 * in NewTicketForm.jsx `import { v4 } from 'uuid';`
+* https://www.learnhowtoprogram.com/react/managing-state/library-feature-uuid-e47a2e7e-210c-4e84-8c62-e90bc83cf704
 
 ## Technologies Used
 

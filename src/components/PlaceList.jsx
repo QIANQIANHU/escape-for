@@ -24,6 +24,7 @@ import PropTypes from 'prop-types';
 // ];
 
 function PlaceList(props){
+  console.log(props.placeList);
   return(
     <div>
       <style jsx>{`
@@ -32,11 +33,11 @@ function PlaceList(props){
       // padding: 20px;
       width: 33.3%;
       `}</style>
-      {props.placeList.map((place,index) =>
+      {props.placeList.map((place) =>
         <Place name={place.name}
           description={place.description}
           image={place.image}
-          key={index}/>
+          key={place.id}/>
       )}
     </div>
   );

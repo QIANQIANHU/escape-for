@@ -9,7 +9,7 @@ function NewPlaceForm(props){
 
   function handleNewTicketFormSubmission(event) {
     event.preventDefault();
-    props.onNewPlaceCreation({name: _name.value, description: _description.value, picture: _picture.value});
+    props.onNewPlaceCreation({name: _name.value, description: _description.value, picture: _picture.value, id: v4()});
     _name.value = '';
     _description.value = '';
     _picture.value = '';
