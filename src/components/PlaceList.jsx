@@ -24,7 +24,7 @@ import PropTypes from 'prop-types';
 // ];
 
 function PlaceList(props){
-  console.log(props.placeList);
+  // console.log(props.placeList);
   return(
     <div>
       <style jsx>{`

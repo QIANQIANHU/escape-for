@@ -686,6 +686,20 @@ https://www.learnhowtoprogram.com/react/managing-state/forms-and-refs
 * in NewTicketForm.jsx `import { v4 } from 'uuid';`
 * https://www.learnhowtoprogram.com/react/managing-state/library-feature-uuid-e47a2e7e-210c-4e84-8c62-e90bc83cf704
 
+<dl><dt>Linting for State</dt></dl>
+
+* in .eslintrc.json add
+  ```
+    "rules": {
+      "react/jsx-handler-names": 2,
+      "react/require-render-return": 2,
+      "react/prefer-stateless-function": 2,
+      "react/no-direct-mutation-state": 2,
+      ...
+    ...
+  ```
+*
+
 ## Technologies Used
 
 * React
